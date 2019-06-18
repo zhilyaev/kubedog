@@ -390,7 +390,7 @@ func formatResourceCaption(resourceCaption string, resourceFailMode FailMode, is
 }
 
 func (mt *multitracker) printDeploymentsStatusProgress() {
-	t := utils.NewTable(.7, .1, .1, .1)
+	t := utils.NewTable(.55, .15, .15, .15)
 	t.Header("NAME", "REPLICAS", "UP-TO-DATE", "AVAILABLE")
 
 	// t.Raw("deploy/extended-monitoring", "1/1", 1, 1)
@@ -442,7 +442,7 @@ func (mt *multitracker) printDeploymentsStatusProgress() {
 		}
 
 		if len(status.Pods) > 0 {
-			st := t.SubTable(.4, .1, .3, .1, .1)
+			st := t.SubTable(.3, .15, .25, .15, .15)
 			st.Header("NAME", "READY", "STATUS", "RESTARTS", "AGE")
 
 			podsNames := []string{}
@@ -544,13 +544,6 @@ func (mt *multitracker) PrintStatusProgress() error {
 	caption := color.New(color.Bold).Sprint("Status progress")
 
 	display.OutF("\n┌ %s\n", caption)
-
-	controllersCaption := fmt.Sprintf("%30s %15s %15s %15s %15s", "NAME", "CURRENT", "UP-TO-DATE", "AVAILABLE", "OLD")
-	display.OutF("│ %s\n", controllersCaption)
-
-	podsCaption := fmt.Sprintf("          %30s %15s %25s %15s %15s", "POD_NAME", "POD_READY", "POD_STATUS", "POD_RESTARTS", "POD_AGE")
-	display.OutF("│ %s\n", podsCaption)
-	display.OutF("│\n")
 
 	mt.printDeploymentsStatusProgress()
 	// mt.printStatefulSetsStatusProgress()
