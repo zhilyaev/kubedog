@@ -552,9 +552,8 @@ func (mt *multitracker) printStatefulSetsStatusProgress() {
 func (mt *multitracker) PrintStatusProgress() error {
 	caption := color.New(color.Bold).Sprint("Status progress")
 
-	_ = logboek.LogProcess(caption, logboek.LogProcessOptions{}, func() error {
+	logboek.LogBlock(caption, logboek.LogBlockOptions{}, func() {
 		mt.printDeploymentsStatusProgress()
-		return nil
 	})
 
 	// mt.printStatefulSetsStatusProgress()
