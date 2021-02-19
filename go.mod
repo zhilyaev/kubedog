@@ -7,7 +7,7 @@ require (
 	github.com/gophercloud/gophercloud v0.1.0 // indirect
 	github.com/spf13/cobra v1.1.1
 	github.com/ugorji/go v1.1.4 // indirect
-	github.com/werf/logboek v0.5.1
+	github.com/werf/logboek v0.5.2
 	github.com/xordataexchange/crypt v0.0.3-0.20170626215501-b2862e3d0a77 // indirect
 	golang.org/x/crypto v0.0.0-20201002170205-7f63de1d35b0
 	k8s.io/api v0.20.2
